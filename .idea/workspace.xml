@@ -2,60 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df0a6415-2540-4a32-981c-5232d846d79a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileChanges/last-build.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileContent/annotation-processors.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileContent/fileContent.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/fileHashes.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/fileHashes.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/fileHashes/resourceHashesCache.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/fileSnapshots.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/taskHistory.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.2.1/taskHistory/taskHistory.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/Application.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/BatchConfiguration$1$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/BatchConfiguration$1$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/BatchConfiguration$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/BatchConfiguration.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/DatabaseConfiguration.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/config/JobCompletionNotificationListener.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/dto/Bible.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/java/main/rewrite/bible/dto/BibleSource.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/schema-all.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_asv.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_bbe.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_dby.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_kjv.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_wbt.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_web.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/t_ylt.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/rewrite/bible/config/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/rewrite/bible/config/DatabaseConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/rewrite/bible/processor/BibleItemASVProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/rewrite/bible/processor/BibleItemProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/rewritebible_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/rewritebible_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/rewritebible_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/rewritebible_test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rewrite/bible/config/BatchConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/rewrite/bible/config/BatchConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/rewrite/bible/config/JobCompletionNotificationListener.java" afterPath="$PROJECT_DIR$/src/main/java/rewrite/bible/config/JobCompletionNotificationListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/schema-all.sql" afterPath="$PROJECT_DIR$/src/main/resources/schema-all.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_asv.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_asv.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_bbe.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_bbe.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_dby.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_dby.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_kjv.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_kjv.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_wbt.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_wbt.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_web.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_web.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/t_ylt.csv" afterPath="$PROJECT_DIR$/src/main/resources/t_ylt.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -111,19 +58,31 @@
       <file leaf-file-name="BatchConfiguration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/rewrite/bible/config/BatchConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+            <state relative-caret-position="-1241">
+              <caret line="125" column="42" lean-forward="false" selection-start-line="125" selection-start-column="42" selection-end-line="125" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2236#2237#0" expanded="true" />
-                <element signature="e#2295#2296#0" expanded="true" />
-                <element signature="e#3351#3371#0" expanded="true" />
-                <element signature="e#3633#3653#0" expanded="true" />
-                <element signature="e#3915#3935#0" expanded="true" />
-                <element signature="e#4197#4217#0" expanded="true" />
-                <element signature="e#4479#4499#0" expanded="true" />
-                <element signature="e#4761#4781#0" expanded="true" />
-                <element signature="e#5043#5063#0" expanded="true" />
+                <element signature="e#3425#3426#0" expanded="true" />
+                <element signature="e#3477#3478#0" expanded="true" />
+                <element signature="e#3535#3536#0" expanded="true" />
+                <element signature="e#3587#3588#0" expanded="true" />
+                <element signature="e#3645#3646#0" expanded="true" />
+                <element signature="e#3697#3698#0" expanded="true" />
+                <element signature="e#3755#3756#0" expanded="true" />
+                <element signature="e#3807#3808#0" expanded="true" />
+                <element signature="e#3865#3866#0" expanded="true" />
+                <element signature="e#3917#3918#0" expanded="true" />
+                <element signature="e#3975#3976#0" expanded="true" />
+                <element signature="e#4027#4028#0" expanded="true" />
+                <element signature="e#4085#4086#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
+                <element signature="e#5194#5214#0" expanded="true" />
+                <element signature="e#5466#5486#0" expanded="true" />
+                <element signature="e#5738#5758#0" expanded="true" />
+                <element signature="e#6010#6030#0" expanded="true" />
+                <element signature="e#6282#6302#0" expanded="true" />
+                <element signature="e#6554#6574#0" expanded="true" />
+                <element signature="e#6826#6846#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -897,7 +856,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1360" height="732" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -908,7 +866,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39700997" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26712328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26712328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1036,15 +994,27 @@
           <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2236#2237#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#3351#3371#0" expanded="true" />
-            <element signature="e#3633#3653#0" expanded="true" />
-            <element signature="e#3915#3935#0" expanded="true" />
-            <element signature="e#4197#4217#0" expanded="true" />
-            <element signature="e#4479#4499#0" expanded="true" />
-            <element signature="e#4761#4781#0" expanded="true" />
-            <element signature="e#5043#5063#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3535#3536#0" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3645#3646#0" expanded="true" />
+            <element signature="e#3697#3698#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3865#3866#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#4027#4028#0" expanded="true" />
+            <element signature="e#4085#4086#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#5194#5214#0" expanded="true" />
+            <element signature="e#5466#5486#0" expanded="true" />
+            <element signature="e#5738#5758#0" expanded="true" />
+            <element signature="e#6010#6030#0" expanded="true" />
+            <element signature="e#6282#6302#0" expanded="true" />
+            <element signature="e#6554#6574#0" expanded="true" />
+            <element signature="e#6826#6846#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1136,15 +1106,27 @@
           <caret line="79" column="46" lean-forward="true" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2236#2237#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#3351#3371#0" expanded="true" />
-            <element signature="e#3633#3653#0" expanded="true" />
-            <element signature="e#3915#3935#0" expanded="true" />
-            <element signature="e#4197#4217#0" expanded="true" />
-            <element signature="e#4479#4499#0" expanded="true" />
-            <element signature="e#4761#4781#0" expanded="true" />
-            <element signature="e#5043#5063#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3535#3536#0" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3645#3646#0" expanded="true" />
+            <element signature="e#3697#3698#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3865#3866#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#4027#4028#0" expanded="true" />
+            <element signature="e#4085#4086#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#5194#5214#0" expanded="true" />
+            <element signature="e#5466#5486#0" expanded="true" />
+            <element signature="e#5738#5758#0" expanded="true" />
+            <element signature="e#6010#6030#0" expanded="true" />
+            <element signature="e#6282#6302#0" expanded="true" />
+            <element signature="e#6554#6574#0" expanded="true" />
+            <element signature="e#6826#6846#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1403,19 +1385,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rewrite/bible/config/BatchConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+        <state relative-caret-position="-1241">
+          <caret line="125" column="42" lean-forward="false" selection-start-line="125" selection-start-column="42" selection-end-line="125" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2236#2237#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#3351#3371#0" expanded="true" />
-            <element signature="e#3633#3653#0" expanded="true" />
-            <element signature="e#3915#3935#0" expanded="true" />
-            <element signature="e#4197#4217#0" expanded="true" />
-            <element signature="e#4479#4499#0" expanded="true" />
-            <element signature="e#4761#4781#0" expanded="true" />
-            <element signature="e#5043#5063#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3535#3536#0" expanded="true" />
+            <element signature="e#3587#3588#0" expanded="true" />
+            <element signature="e#3645#3646#0" expanded="true" />
+            <element signature="e#3697#3698#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3865#3866#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#4027#4028#0" expanded="true" />
+            <element signature="e#4085#4086#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#5194#5214#0" expanded="true" />
+            <element signature="e#5466#5486#0" expanded="true" />
+            <element signature="e#5738#5758#0" expanded="true" />
+            <element signature="e#6010#6030#0" expanded="true" />
+            <element signature="e#6282#6302#0" expanded="true" />
+            <element signature="e#6554#6574#0" expanded="true" />
+            <element signature="e#6826#6846#0" expanded="true" />
           </folding>
         </state>
       </provider>
