@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import rewrite.bible.dto.Bible;
 import rewrite.bible.dto.BibleSource;
-import rewrite.bible.processor.BibleItemASVProcessor;
+import rewrite.bible.processor.BibleItemProcessor;
 
 import javax.sql.DataSource;
 
@@ -36,10 +36,10 @@ public class BatchConfiguration {
     public DataSource dataSource;
 
     @Bean
-    public FlatFileItemReader<BibleSource> reader() {
+    public FlatFileItemReader<BibleSource> reader(String file) {
         FlatFileItemReader<BibleSource> reader = new FlatFileItemReader<>();
 
-        reader.setResource(new ClassPathResource("t_asv.csv"));
+        reader.setResource(new ClassPathResource(file));
         reader.setLineMapper(new DefaultLineMapper<BibleSource>() {{
             setLineTokenizer(new DelimitedLineTokenizer() {{
                 setNames(new String[]{"personalizedId", "book", "chapter", "verse", "citation"});
@@ -52,8 +52,8 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public BibleItemASVProcessor processor() {
-        return new BibleItemASVProcessor();
+    public BibleItemProcessor processor(String bibleVersion) {
+        return new BibleItemProcessor(bibleVersion);
     }
 
     @Bean
@@ -71,16 +71,76 @@ public class BatchConfiguration {
                 .get("importBibleJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
-                .flow(step1())
-                .end()
+                .start(stepASV())
+                .next(stepBBE())
+                .next(stepDBY())
+                .next(stepKJV())
+                .next(stepWBT())
+                .next(stepWEB())
+                .next(stepYLT())
                 .build();
     }
 
-    private Step step1() {
-        return stepBuilderFactory.get("step1")
+
+    private Step stepASV() {
+        return stepBuilderFactory.get("stepASV")
                 .<BibleSource, Bible>chunk(10)
-                .reader(reader())
-                .processor(processor())
+                .reader(reader("t_asv.csv"))
+                .processor(processor("asv"))
+                .writer(writer())
+                .build();
+    }
+
+    private Step stepBBE() {
+        return stepBuilderFactory.get("stepBBE")
+                .<BibleSource, Bible>chunk(10)
+                .reader(reader("t_bbe.csv"))
+                .processor(processor("bbe"))
+                .writer(writer())
+                .build();
+    }
+
+    private Step stepDBY() {
+        return stepBuilderFactory.get("stepDBY")
+                .<BibleSource, Bible>chunk(10)
+                .reader(reader("t_dby.csv"))
+                .processor(processor("dby"))
+                .writer(writer())
+                .build();
+    }
+
+    private Step stepKJV() {
+        return stepBuilderFactory.get("stepKJV")
+                .<BibleSource, Bible>chunk(10)
+                .reader(reader("t_kjv.csv"))
+                .processor(processor("kjv"))
+                .writer(writer())
+                .build();
+    }
+
+    private Step stepWBT() {
+        return stepBuilderFactory.get("stepWBT")
+                .<BibleSource, Bible>chunk(10)
+                .reader(reader("t_wbt.csv"))
+                .processor(processor("wbt"))
+                .writer(writer())
+                .build();
+    }
+
+    private Step stepWEB() {
+        return stepBuilderFactory.get("stepWEB")
+                .<BibleSource, Bible>chunk(10)
+                .reader(reader("t_web.csv"))
+                .processor(processor("web"))
+                .writer(writer())
+                .build();
+    }
+
+    private Step stepYLT() {
+        return stepBuilderFactory.get("stepYLT")
+                .<BibleSource, Bible>chunk(10)
+                .reader(reader("t_ytl.csv"))
+                .processor(processor("ytl"))
                 .writer(writer())
                 .build();
     }

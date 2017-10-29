@@ -28,7 +28,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("!!! JOB FINISHED! Time to verify the results");
 
-            List<Bible> results = jdbcTemplate.query("SELECT book, chapter, verse, citation, version FROM bible", (rs, row) -> new Bible(
+            List<Bible> results = jdbcTemplate.query("SELECT book, citation, chapter, verse, version FROM bible", (rs, row) -> new Bible(
                     rs.getInt(1),
                     rs.getString(2),
                     rs.getInt(3),
