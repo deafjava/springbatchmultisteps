@@ -1,0 +1,11 @@
+spring:
+  secondDatasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: ${DEST_DATABASE_URL}
+    username: ${DEST_DATABASE_USER}
+    password: ${DEST_DATABASE_PWD}
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: ${ORIG_DATABASE_URL}
+    username: ${ORIG_DATABASE_USER}
+    password: ${ORIG_DATABASE_PWD}
