@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
 import rewrite.bible.dto.Bible;
 import rewrite.bible.dto.BibleBodruk;
-import rewrite.bible.dto.BibleSource;
 
 @Slf4j
 @AllArgsConstructor

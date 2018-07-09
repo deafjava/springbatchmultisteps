@@ -5,14 +5,16 @@ import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
-import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
-import org.springframework.batch.item.database.JdbcBatchItemWriter;
+import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.JdbcCursorItemReader;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.batch.item.file.FlatFileItemWriter;
+import org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor;
+import org.springframework.batch.item.file.transform.FormatterLineAggregator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import rewrite.bible.dto.Bible;
 import rewrite.bible.dto.BibleBodruk;
@@ -23,24 +25,6 @@ import javax.sql.DataSource;
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
-
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
-
-    @Autowired
-    private StepBuilderFactory stepBuilderFactory;
-
-    @Autowired
-    private DataSource originDataSource;
-
-    @Autowired
-    private DataSource destinyDataSource;
-
-//    @Bean
-//    public FlatFileItemReader<BibleSource> readerASV() {
-//        FlatFileItemReader<BibleSource> reader = buildReader("t_asv.csv");
-//        return reader;
-//    }
 
     @Bean
     public ItemReader<BibleBodruk> dbItemReader(DataSource dataSource) {
@@ -55,7 +39,7 @@ public class BatchConfiguration {
                         "text, " +
                         "testament, " +
                         "version " +
-                        "FROM verses WHERE version = 'ara'" +
+                        "FROM verses WHERE version = 'ari'" +
                         "ORDER BY id ASC";
 
         databaseReader.setDataSource(dataSource);
@@ -65,62 +49,45 @@ public class BatchConfiguration {
         return databaseReader;
     }
 
-//    private FlatFileItemReader<BibleSource> buildReader(String file) {
-//        FlatFileItemReader<BibleSource> reader = new FlatFileItemReader<>();
-//
-//
-//        reader.setResource(new ClassPathResource(file));
-//        reader.setLineMapper(new DefaultLineMapper<BibleSource>() {{
-//            setLineTokenizer(new DelimitedLineTokenizer() {{
-//                setNames(new String[]{"personalizedId", "book", "chapter", "verse", "citation"});
-//            }});
-//            setFieldSetMapper(new BeanWrapperFieldSetMapper<BibleSource>() {{
-//                setTargetType(BibleSource.class);
-//            }});
-//        }});
-//        return reader;
-//    }
-
     @Bean
-    public BibleBodrukItemProcessor processor() {
-        return new BibleBodrukItemProcessor(10);
-    }
+    public ItemWriter<Bible> writer() {
+        FlatFileItemWriter<Bible> writer = new FlatFileItemWriter<>();
 
-    @Bean
-    public JdbcBatchItemWriter<Bible> writer() {
-        JdbcBatchItemWriter<Bible> writer = new JdbcBatchItemWriter<>();
-        writer.setItemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
-        writer.setSql("INSERT INTO bible (book, chapter, verse, citation, version) VALUES(:book, :chapter, :verse, :citation, :version)");
-        writer.setDataSource(destinyDataSource);
+        writer.setResource(new FileSystemResource("~/ari.sql"));
+        FormatterLineAggregator<Bible> delLineAgg = new FormatterLineAggregator<>();
+        delLineAgg.setMaximumLength(2048);
+        delLineAgg.setFormat("INSERT INTO `bible` (`book`, `chapter`, `verse`, `citation`, `version_id`) VALUES(%d, %d, %d, '%s', %d);");
+        BeanWrapperFieldExtractor<Bible> fieldExtractor = new BeanWrapperFieldExtractor<>();
+        fieldExtractor.setNames(new String[] {"book", "chapter", "verse", "citation", "version"});
+        delLineAgg.setFieldExtractor(fieldExtractor);
+        writer.setLineAggregator(delLineAgg);
         return writer;
     }
 
     @Bean
-    public Job importBibleJob(JobCompletionNotificationListener listener) {
-        return jobBuilderFactory
+    public ItemProcessor<BibleBodruk, Bible> processor() {
+        return new BibleBodrukItemProcessor(9);
+    }
+
+    @Bean
+    public Job importBibleJob(JobBuilderFactory jobs, Step step) {
+        return jobs
                 .get("importBibleJob")
-                .incrementer(new RunIdIncrementer())
-                .listener(listener)
-                .start(step())
+                .flow(step)
+                .end()
                 .build();
+
     }
 
-
-    private Step step() {
+    @Bean
+    public Step step(StepBuilderFactory stepBuilderFactory, ItemReader<BibleBodruk> reader,
+                     ItemWriter<Bible> writer, ItemProcessor<BibleBodruk, Bible> processor) {
         return stepBuilderFactory.get("step")
-                .<BibleBodruk, Bible>chunk(9)
-                .reader(dbItemReader(originDataSource))
-                .processor(processor())
-                .writer(writer())
+                .<BibleBodruk, Bible> chunk(100)
+                .reader(reader)
+                .processor(processor)
+                .writer(writer)
                 .build();
     }
-//    private Step stepYLT() {
-//        return stepBuilderFactory.get("stepYLT")
-//                .<BibleSource, Bible>chunk(10)
-//                .reader(readerYLT())
-//                .processor(processorYLT())
-//                .writer(writer())
-//                .build();
-//    }
 
 }
