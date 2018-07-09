@@ -15,5 +15,5 @@ public class Bible {
     private String citation;
     private Integer chapter;
     private Integer verse;
-    private String version;
+    private Integer version;
 }
